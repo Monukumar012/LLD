@@ -1,0 +1,36 @@
+# IntelliJ project files
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Compiled class files
+*.class
+
+# Logs
+*.log
+
+# Build directories
+/out/
+/target/
+/build/
+
+# Mac system files
+.DS_Store
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Gradle
+.gradle/
+build/
+
+# Maven
+.mvn/
+.settings/
+dependency-reduced-pom.xml
+
+# Others
+*.swp

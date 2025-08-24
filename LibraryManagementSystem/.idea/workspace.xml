@@ -4,7 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9253def4-edcd-4121-9bf2-1b263777af24" name="Changes" comment="" />
+    <list default="true" id="9253def4-edcd-4121-9bf2-1b263777af24" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/LLD.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LibraryManagementSystem.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/lms/application/LibraryManagementSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/lms/application/dto/BookSearchResultDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/lms/application/entity/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/lms/application/entity/BookCopy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/lms/application/entity/BookLending.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/lms/application/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/lms/application/enums/BookCondition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/lms/application/enums/BookCopyStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/lms/application/search/AuthorSearchStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/lms/application/search/SearchService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/lms/application/search/SearchServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/lms/application/search/SearchStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/lms/application/search/TitleSearchStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/lms/application/service/BookCopyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/lms/application/service/BookCopyServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/lms/application/service/BookLendingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/lms/application/service/BookLendingServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/lms/application/service/BookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/lms/application/service/BookServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/lms/application/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/lms/application/service/UserServiceImpl.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +52,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
