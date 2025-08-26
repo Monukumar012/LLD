@@ -29,8 +29,11 @@ public class BookLendingServiceImpl implements BookLendingService{
     }
 
 
-    public BookLending checkoutBook(Long userId, Long bookCopyId){
-        BookCopy bookCopy = bookCopyService.find(bookCopyId);
+    public BookLending checkoutBook(Long userId, Long bookId){
+        BookCopy bookCopy = bookCopyService.getAnyAvailableBookCopyByBookId(bookId);
+        if(bookCopy == null){
+            throw new RuntimeException("Book copy is not available for given bookId: "+bookId);
+        }
         if(bookCopy.getBookCopyStatus() == BookCopyStatus.BORROWED){
             throw new RuntimeException("BookCopy is already borrowed : "+bookCopy.getBookCopyId());
         }
@@ -42,16 +45,17 @@ public class BookLendingServiceImpl implements BookLendingService{
         return bookLending;
     }
 
-    public void returnBook(Long checkoutId){
+    public BookLending returnBook(Long checkoutId){
         BookLending bookLending = bookLendings.get(checkoutId);
         if(bookLending != null){
             // set book status as available
             bookLending.getBookCopy().setBookCopyStatus(BookCopyStatus.AVAILABLE);
             bookLending.setEndTime(LocalDateTime.now());
         }
+        return bookLending;
     }
 
-    public void returnBook(Long userId, Long bookCopyId){
+    public BookLending returnBook(Long userId, Long bookCopyId){
         BookLending bookLending1 = bookLendings.values().stream()
                 .filter(bookLending -> bookLending.getBookCopy().getBookCopyId().equals(bookCopyId)
                         && bookLending.getUser().getUserId().equals(userId)).findFirst().orElse(null);
@@ -60,6 +64,7 @@ public class BookLendingServiceImpl implements BookLendingService{
             bookLending1.getBookCopy().setBookCopyStatus(BookCopyStatus.AVAILABLE);
             bookLending1.setEndTime(LocalDateTime.now());
         }
+        return bookLending1;
     }
 
     {

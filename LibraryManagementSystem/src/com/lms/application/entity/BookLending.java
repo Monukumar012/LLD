@@ -72,4 +72,15 @@ public class BookLending {
     public int hashCode() {
         return Objects.hashCode(checkoutId);
     }
+
+    @Override
+    public String toString() {
+        return "BookLending{" +
+                "checkoutId=" + checkoutId +
+                ", user=" + user +
+                ", bookCopy=" + bookCopy +
+                ", startTime=" + startTime +
+                ", endTime=" + endTime +
+                '}';
+    }
 }

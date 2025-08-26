@@ -3,6 +3,8 @@ package com.lms.application;
 import com.lms.application.dto.BookSearchResultDTO;
 import com.lms.application.entity.Book;
 import com.lms.application.entity.BookCopy;
+import com.lms.application.entity.BookLending;
+import com.lms.application.entity.User;
 import com.lms.application.enums.BookCondition;
 import com.lms.application.enums.BookCopyStatus;
 import com.lms.application.search.*;
@@ -33,6 +35,25 @@ public class LibraryManagementSystem {
         System.out.println(bookSearchResultDTOS1);
         List<BookSearchResultDTO> bookSearchResultDTOS2 = searchService.search("Alex", authorSearchStrategy);
         System.out.println(bookSearchResultDTOS2);
+
+        // Checkout Book
+        BookLending bookLending1 = bookLendingService.checkoutBook(5000L, 50000L);
+        System.out.println("Book checkout : "+bookLending1);
+
+        // Checkout Book
+        BookLending bookLending2 = bookLendingService.checkoutBook(5001L, 50000L);
+        System.out.println("Book checkout : "+bookLending2);
+
+        bookSearchResultDTOS1 = searchService.search("Harry Potter 1", titleSearchStrategy);
+        System.out.println(bookSearchResultDTOS1);
+
+        // Return Book
+        //BookLending afterReturn = bookLendingService.returnBook(10000L);
+        BookLending afterReturn = bookLendingService.returnBook(5000L, 10000L);
+        System.out.println("After book return : "+afterReturn);
+
+        bookSearchResultDTOS1 = searchService.search("Harry Potter 1", titleSearchStrategy);
+        System.out.println(bookSearchResultDTOS1);
 
         //bookLendingService.checkoutBook()
     }
@@ -73,6 +94,9 @@ public class LibraryManagementSystem {
         bookCopyService.addBookCopy(new BookCopy(book5.getBookId(), BookCondition.GOOD, BookCopyStatus.AVAILABLE));
         bookCopyService.addBookCopy(new BookCopy(book5.getBookId(), BookCondition.GOOD, BookCopyStatus.AVAILABLE));
         bookCopyService.addBookCopy(new BookCopy(book5.getBookId(), BookCondition.GOOD, BookCopyStatus.AVAILABLE));
+
+        userService.registerUser(new User(5000L, "Monu Kumar"));
+        userService.registerUser(new User(5001L, "Prince Kumar"));
     }
 
     private void initilizeBeans() {

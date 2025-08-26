@@ -6,6 +6,14 @@ public class User {
     private Long userId;
     private String fullName;
 
+    public User() {
+    }
+
+    public User(Long userId, String fullName) {
+        this.userId = userId;
+        this.fullName = fullName;
+    }
+
     public Long getUserId() {
         return userId;
     }
@@ -31,5 +39,13 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hashCode(userId);
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", fullName='" + fullName + '\'' +
+                '}';
     }
 }

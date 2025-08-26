@@ -4,7 +4,9 @@ import com.lms.application.entity.BookCopy;
 
 public interface BookCopyService {
     boolean addBookCopy(BookCopy bookCopy);
-    Long getBookCopyCount(Long bookId);
+    Long getAvailableBookCopyCount(Long bookId);
 
     BookCopy find(Long bookCopyId);
+
+    BookCopy getAnyAvailableBookCopyByBookId(Long bookId);
 }

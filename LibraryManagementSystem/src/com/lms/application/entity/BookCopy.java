@@ -65,4 +65,14 @@ public class BookCopy {
     public int hashCode() {
         return Objects.hashCode(bookCopyId);
     }
+
+    @Override
+    public String toString() {
+        return "BookCopy{" +
+                "bookCopyId=" + bookCopyId +
+                ", bookCopyStatus=" + bookCopyStatus +
+                ", bookCondition=" + bookCondition +
+                ", bookId=" + bookId +
+                '}';
+    }
 }

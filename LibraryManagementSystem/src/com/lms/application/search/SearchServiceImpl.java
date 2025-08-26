@@ -32,7 +32,7 @@ public class SearchServiceImpl implements SearchService{
         bookSearchResultDTO.setBookId(book.getBookId());
         bookSearchResultDTO.setBookName(book.getBookName());
         bookSearchResultDTO.setAuthorName(book.getAuthorName());
-        bookSearchResultDTO.setAvailableCopyCount(bookCopyService.getBookCopyCount(book.getBookId()));
+        bookSearchResultDTO.setAvailableCopyCount(bookCopyService.getAvailableBookCopyCount(book.getBookId()));
         return bookSearchResultDTO;
     }
 }

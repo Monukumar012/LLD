@@ -1,6 +1,7 @@
 package com.lms.application.service;
 
 import com.lms.application.entity.BookCopy;
+import com.lms.application.enums.BookCopyStatus;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,9 +25,10 @@ public class BookCopyServiceImpl implements BookCopyService{
         return bookCopies.put(bookCopy.getBookCopyId(), bookCopy) != null;
     }
 
-    public Long getBookCopyCount(Long bookId){
+    public Long getAvailableBookCopyCount(Long bookId){
         return bookCopies.values().stream()
-                .filter(bookCopy -> bookId.equals(bookCopy.getBookId())).count();
+                .filter(bookCopy -> bookId.equals(bookCopy.getBookId())
+                        && BookCopyStatus.AVAILABLE.equals(bookCopy.getBookCopyStatus())).count();
     }
 
     @Override
@@ -36,6 +38,13 @@ public class BookCopyServiceImpl implements BookCopyService{
             throw new RuntimeException("Entity not found with id : "+bookCopyId);
         }
         return bookCopy;
+    }
+
+    @Override
+    public BookCopy getAnyAvailableBookCopyByBookId(Long bookId) {
+        return bookCopies.values().stream()
+                .filter(bookCopy -> bookId.equals(bookCopy.getBookId()) && BookCopyStatus.AVAILABLE.equals(bookCopy.getBookCopyStatus()))
+                .findFirst().orElse(null);
     }
 
     {
