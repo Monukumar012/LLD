@@ -5,6 +5,9 @@ import java.util.Objects;
 public final class Mark {
     private final Character symbol;
     public Mark(Character symbol){
+        if(symbol == null){
+            throw new IllegalArgumentException("Invalid mark symbol !");
+        }
         this.symbol = symbol;
     }
 

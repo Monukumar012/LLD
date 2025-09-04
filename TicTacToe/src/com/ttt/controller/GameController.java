@@ -1,87 +1,66 @@
 package com.ttt.controller;
 
 import com.ttt.entity.Board;
-import com.ttt.entity.Mark;
 import com.ttt.entity.Player;
+import com.ttt.entity.Position;
+import com.ttt.enums.GameState;
+import com.ttt.moveprovider.MoveProvider;
 
-import java.util.*;
+import java.util.Queue;
 
 public class GameController {
-    private Deque<Player> players;
+    private Queue<Player> players;
     private Board board;
-    private int totalPlayer;
-    private static final Scanner sc = new Scanner(System.in);
+    private MoveProvider moveProvider;
 
-    public GameController(int boardSize, int winningCount, int numOfPlayer) {
-        this.totalPlayer = numOfPlayer;
-        initialize(boardSize, winningCount, numOfPlayer);
+    public GameController(Board board,
+                          Queue<Player> players,
+                          MoveProvider moveProvider) {
+        this.board = board;
+        this.players = players;
+        this.moveProvider = moveProvider;
     }
 
-    private void initialize(int boardSize, int winningCount, int numOfPlayer) {
-        board = new Board(boardSize, winningCount);
-        initializePlayers(numOfPlayer);
-    }
-
-    private void initializePlayers(int numOfPlayer) {
-        players = new ArrayDeque<>();
-        for (int i = 0; i < numOfPlayer; i++) {
-            Character symbol = (char) ('A' + i);
-            Player player = new Player(10000L + i, "Player_" + (i + 1), new Mark(symbol));
-            players.add(player);
-        }
-    }
 
     public void startGame() {
         System.out.println("Game Start With Players: " + players);
-        while (!players.isEmpty()) {
-            if (!board.hasAnyBlankCell()) {
-                System.out.println("Board Filled Completely");
-                System.out.println("Gamed Tied Between Players: "+players);
-            }
-            Player player = players.poll();
+        GameState gameState = GameState.RUNNING;
+        while (gameState == GameState.RUNNING) {
+            Player player = players.peek();
             displayBoard();
-            boolean isPlayed = playTurn(player);
-            if (!isPlayed) {
-                players.addFirst(player);
+            Position position = moveProvider.nextMove(player, board);
+            if (board.isInvalidMove(position)) {
+                System.out.println("Invalid Move Please Enter correct position!");
+                continue;
             }
-
-        }
-        System.out.println("Game Ended!");
-    }
-
-    private int getCurrentWinnerRank() {
-        return totalPlayer - players.size();
-    }
-
-    private boolean playTurn(Player player) {
-        System.out.println("Player Turn : " + player);
-        int[] position = getPositionFromPlayer();
-        try {
+            players.poll();
             board.markCell(position, player.getPlayerMark());
             if (board.isWinner(position, player.getPlayerMark())) {
-                System.out.println("Winner : " + getCurrentWinnerRank() + " | " + player);
+                declareWinner(player);
+                gameState = GameState.WON;
+            } else if (board.isFull()) {
+                players.add(player);
+                declareTie();
+                gameState = GameState.TIE;
             } else {
                 players.add(player);
             }
-            return true;
-        } catch (Exception ex) {
-            // Handle Exception
-            System.out.println(ex.getMessage());
         }
-        return false;
+        players.clear();
+        System.out.println("Game Ended with : " + gameState);
     }
 
-    private int[] getPositionFromPlayer() {
-        System.out.println("Enter position to mark cell ->");
-        System.out.print("Enter row number: ");
-        int row = sc.nextInt();
-        System.out.print("Enter column number: ");
-        int column = sc.nextInt();
-        return new int[]{row, column};
+    private void declareTie() {
+        System.out.println("Board Filled Completely");
+        System.out.println("Gamed Tied Between Players: " + players);
     }
+
+    private void declareWinner(Player player) {
+        System.out.println("Winner Winner : " + player);
+    }
+
 
     public void displayBoard() {
         System.out.println(board.getBoardData());
     }
-
 }

@@ -3,12 +3,9 @@ package com.ttt.entity;
 import java.util.Objects;
 
 public class Player {
-    private Long playerId;
-    private String playerName;
-    private Mark playerMark;
-
-    public Player() {
-    }
+    private final Long playerId;
+    private final String playerName;
+    private final Mark playerMark;
 
     public Player(Long playerId, String playerName, Mark playerMark) {
         this.playerId = playerId;
@@ -20,24 +17,12 @@ public class Player {
         return playerId;
     }
 
-    public void setPlayerId(Long playerId) {
-        this.playerId = playerId;
-    }
-
     public String getPlayerName() {
         return playerName;
     }
 
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
-    }
-
     public Mark getPlayerMark() {
         return playerMark;
-    }
-
-    public void setPlayerMark(Mark playerMark) {
-        this.playerMark = playerMark;
     }
 
     @Override
