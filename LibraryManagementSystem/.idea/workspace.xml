@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9253def4-edcd-4121-9bf2-1b263777af24" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../TicTacToe/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lms/application/LibraryManagementSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lms/application/LibraryManagementSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lms/application/entity/BookCopy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lms/application/entity/BookCopy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lms/application/entity/BookLending.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lms/application/entity/BookLending.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lms/application/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lms/application/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lms/application/search/SearchServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lms/application/search/SearchServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lms/application/service/BookCopyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lms/application/service/BookCopyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lms/application/service/BookCopyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lms/application/service/BookCopyServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/lms/application/service/BookLendingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lms/application/service/BookLendingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/lms/application/service/BookLendingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/lms/application/service/BookLendingServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,18 +26,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Monukumar012"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Monukumar012&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:Monukumar012/LLD.git",
-    "accountId": "924bce8e-fb40-4a3e-a820-3748ef786a39"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:Monukumar012/LLD.git&quot;,
+    &quot;accountId&quot;: &quot;924bce8e-fb40-4a3e-a820-3748ef786a39&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -53,23 +46,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.LibraryManagementSystem.executor": "Run",
-    "Application.Main.executor": "Debug",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "onboarding.tips.debug.path": "/Users/monukumar/Monu/LLD/LibraryManagementSystem/src/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.LibraryManagementSystem.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Debug&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/monukumar/Monu/LLD/LibraryManagementSystem/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/files" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.lms.application.service" />
       <recent name="com.lms.application.search" />
@@ -104,6 +101,17 @@
       <updated>1755798130113</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
