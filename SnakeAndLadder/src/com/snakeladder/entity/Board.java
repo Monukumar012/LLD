@@ -15,16 +15,26 @@ public class Board {
     }
 
     private void initializeBoard(int boardSize) {
-        cells = new Cell[boardSize];
-        Arrays.fill(cells, new Cell());
+        cells = new Cell[boardSize + 1];
+        for (int i = 0; i <= boardSize; i++) {
+            cells[i] = new Cell();
+        }
     }
 
     public void addSnake(Snake snake) {
-        cells[snake.getStart()].setJump(snake);
+        Cell cell = cells[snake.getStart()];
+        if (cell.hasJump()) {
+            throw new RuntimeException("Cell already have some snake or ladder: " + cell.getJump());
+        }
+        cell.setJump(snake);
     }
 
     public void addLadder(Ladder ladder) {
-        cells[ladder.getStart()].setJump(ladder);
+        Cell cell = cells[ladder.getStart()];
+        if (cell.hasJump()) {
+            throw new RuntimeException("Cell already have some snake or ladder: " + cell.getJump());
+        }
+        cell.setJump(ladder);
     }
 
     public Long getBoardId() {
@@ -44,7 +54,7 @@ public class Board {
     }
 
     public int getUpdatedPosition(int position) {
-        Cell cell = cells[position - 1];
+        Cell cell = cells[position];
         if (cell.hasJump()) {
             return cell.getJump().getEnd();
         }

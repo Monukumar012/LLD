@@ -31,13 +31,15 @@ public class GameController {
 
     private void playTurn(Player player) {
         int diceNumber = dice.rollDice();
-        int playerTempPosition = diceNumber + player.getPlayerPosition();
+        int playerOldPos = player.getPlayerPosition();
+        int playerTempPosition = diceNumber + playerOldPos;
 
         if (isInvalidMove(playerTempPosition)) {
             handleInvalidMove(player, diceNumber);
         } else {
             int updatedPosition = board.getUpdatedPosition(playerTempPosition);
             player.setPlayerPosition(updatedPosition);
+            System.out.println("Player "+player.getPlayerName()+" moved from: "+playerOldPos +" to: "+updatedPosition);
             if (isWinningMove(updatedPosition)) {
                 handleWin(player);
             } else {
