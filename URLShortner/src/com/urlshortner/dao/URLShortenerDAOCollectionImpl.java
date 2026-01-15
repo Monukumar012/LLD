@@ -41,11 +41,11 @@ public class URLShortenerDAOCollectionImpl implements URLShortenerDAO{
         return url.getShortUrl();
     }
 
-    public String getLongUrl(String shortUrl) {
+    public URL getActualURL(String shortUrl) {
         URL url = shortUrlMap.get(shortUrl);
         if(url == null) {
-            throw new URLNotFoundException("URL not found for : "+ url);
+            throw new URLNotFoundException("URL not found for : "+ shortUrl);
         }
-        return url.getLongUrl();
+        return url;
     }
 }

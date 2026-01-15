@@ -2,7 +2,7 @@ package com.urlshortner.service;
 
 import com.urlshortner.dao.URLShortenerDAO;
 import com.urlshortner.entity.URL;
-import com.urlshortner.exception.SystemExceptionWithUserMessage;
+import com.urlshortner.exception.URLNotFoundException;
 import com.urlshortner.util.Base62;
 
 
@@ -20,12 +20,16 @@ public class URLShortenerService {
         }
         Long uniqueId = urlShortenerDAO.generateUniqueID();
         String shortUrl = Base62.encode(uniqueId);
-        URL url = new URL(longUrl, shortUrl, uniqueId);
+        URL url = new URL(longUrl, shortUrl, uniqueId, null);
         urlShortenerDAO.saveURL(url);
         return shortUrl;
     }
 
     public String getActualURL(String shortUrl) {
-        return urlShortenerDAO.getLongUrl(shortUrl);
+        URL url = urlShortenerDAO.getActualURL(shortUrl);
+        if(url.isExpired()) {
+            throw new URLNotFoundException("URL has expired");
+        }
+        return url.getLongUrl();
     }
 }

@@ -7,5 +7,5 @@ public interface URLShortenerDAO {
     void saveURL(URL url);
     boolean isLongUrlExists(String longUrl);
     String getShortUrl(String longUrl);
-    String getLongUrl(String shortUrl);
+    URL getActualURL(String shortUrl);
 }
